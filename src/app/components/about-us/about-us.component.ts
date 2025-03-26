@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { aboutUs } from 'consts';
 import { About } from 'models';
 
 @Component({
@@ -8,5 +9,5 @@ import { About } from 'models';
   styleUrl: './about-us.component.scss'
 })
 export class AboutUsComponent {
-  @Input() allAbouts: About[] = [];
+  allAbouts: About[] = aboutUs;
 }

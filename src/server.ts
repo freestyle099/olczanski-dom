@@ -1,3 +1,5 @@
+import 'dotenv/config';
+
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -6,6 +8,8 @@ import { CommonEngine, isMainModule } from '@angular/ssr/node';
 import express from 'express';
 
 import bootstrap from './main.server';
+import { contact } from './routes/contact';
+import { weather } from './routes/weather';
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
@@ -14,17 +18,8 @@ const indexHtml = join(serverDistFolder, 'index.server.html');
 const app = express();
 const commonEngine = new CommonEngine();
 
-/**
- * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
- *
- * Example:
- * ```ts
- * app.get('/api/**', (req, res) => {
- *   // Handle API request
- * });
- * ```
- */
+app.use('/api/contact', contact);
+app.use('/api/weather', weather);
 
 /**
  * Serve static files from /browser

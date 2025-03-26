@@ -1,10 +1,17 @@
-function emailTemplate(body) {
+interface Body {
+  fullName: string;
+  phone: string;
+  email: string;
+  message: string;
+}
+
+export function emailTemplate(body: Body): string {
   return `
       <div style="width: 640px; color: rgba(0,0,0,.87)">
         <h3>Dziękujemy za przesłanie wiadomości</h3>
         <h4>Jest to wiadomość automatyczna prosimy na nią nie odpowiadać.</h4>
         <h4>Odpowiemy na Państwa wiadomość tak szybko jak będzie to możliwe.</h4>
-        <hr />  
+        <hr />
         <p>Treść wiadomości: </p>
         <div><span style="font-weight: bold">Imię i nazwisko: </span><span>${body.fullName}</span></div>
         <div><span style="font-weight: bold">Numer telefonu: </span><span>${body.phone}</span></div>
@@ -20,5 +27,3 @@ function emailTemplate(body) {
         </div>
       </div>`;
 }
-
-module.exports = emailTemplate;

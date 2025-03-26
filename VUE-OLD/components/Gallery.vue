@@ -19,23 +19,17 @@
           />
         </div>
       </div>
-      <CoolLightBox
-        :items="images.map((el) => el.responsiveImage.src)"
-        :index="index"
-        @close="index = null"
-      />
+
     </div>
   </section>
 </template>
 
 <script>
-import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css';
 
-import CoolLightBox from 'vue-cool-lightbox';
 
 export default {
   name: 'Gallery',
-  components: { CoolLightBox },
+
   props: {
     images: {
       type: Array,
