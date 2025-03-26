@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'typography';
+@import 'primeicons/primeicons.css';
+
+:root {
+  --header-font: 'Raleway', sans-serif;
+  --body-font: 'Open Sans', sans-serif;
+  --primary-color: #fcc150;
+  --primary-color-rgba: rgba(252, 193, 80, 0.5);
+  --secondary-color: #0095e1;
+  --tertiary-color: #007dbe;
+  --error-color: #e31e25;
+  --background-color: #f7f9f4;
+  --font-color: #323232;
+  --white-color: #fff;
+  --black-color: #000;
+  --recommend-color: rgba(0, 0, 0, 0.5);
+  --border-color: #f0f0f0;
+  --success-color: #67ba6d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font), sans-serif;
+  color: var(--font-color);
+  box-sizing: border-box;
+  background-color: var(--white-color);
+}
+
+.container {
+  max-width: 1236px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+p {
+  letter-spacing: 0.03rem;
+  line-height: 1.4;
+  &:not(:last-of-type) {
+    margin-bottom: 1.4rem;
+  }
+}

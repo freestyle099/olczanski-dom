@@ -3,6 +3,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "types": ["node", "jest"],
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
@@ -16,7 +17,15 @@
     "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "ES2022"
+    "module": "ES2022",
+    "paths": {
+      "components/*": ["./src/app/components/*"],
+      "consts": ["./src/app/consts/index.ts"],
+      "enums": ["./src/app/enums/index.ts"],
+      "models": ["./src/app/models/index.ts"],
+      "pages/*": ["./src/app/pages/*"],
+      "services/*": ["./src/app/services/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

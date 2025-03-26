@@ -1,0 +1,91 @@
+@use 'variables' as *;
+
+.nav {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__link {
+    text-decoration: none;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    color: var(--white-color);
+    font-weight: 900;
+    transition: 0.2s ease-in-out;
+    font-size: 1rem;
+    &:hover {
+      color: var(--primary-color);
+    }
+    @media only screen and (max-width: $md) {
+      color: var(--font-color);
+    }
+  }
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    list-style: none;
+
+    @media only screen and (max-width: $md) {
+      position: fixed;
+      grid-auto-flow: row;
+      align-content: start;
+      top: 0;
+      right: 0;
+      background-color: var(--white-color);
+      height: 100vh;
+      padding: 2rem 1rem;
+      z-index: 2;
+      transform: translateX(100%);
+      transition: 0.2s ease-in-out;
+      &--active {
+        transform: translateX(0);
+      }
+    }
+  }
+  &__mobile-btn {
+    //--p-button-primary-background: transparent;
+    --p-button-text-primary-color: var(--white-color);
+    --p-button-lg-font-size: 2rem;
+    //--p-button-primary-border-color: transparent;
+
+    font-size: 2rem;
+    display: none;
+    width: 3rem;
+    height: 3rem;
+    fill: var(--white-color);
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 1));
+    z-index: 1;
+    @media only screen and (max-width: $md) {
+      position: fixed;
+      top: 1.5rem;
+      right: 1rem;
+      display: flex;
+      transition: 0.2s ease-in-out;
+      cursor: pointer;
+    }
+  }
+  &__background {
+    display: none;
+    @media only screen and (max-width: $md) {
+      display: block;
+      position: fixed;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.7);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.2s ease-in-out;
+      &--active {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}

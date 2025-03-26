@@ -1,0 +1,17 @@
+<section id="o-nas" class="about">
+  <div class="container">
+    <h2 class="about__title heading-2">O nas</h2>
+    <div class="about__items">
+      @for (about of allAbouts; track about.title) {
+        <div [attr.key]="about.id" class="about__item">
+          <svg class="about__icon">
+            <use [attr.xlink:href]="'/sprite.svg#icon-' + about.iconPath"></use>
+          </svg>
+          <p>
+            {{ about.title }}
+          </p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
