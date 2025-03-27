@@ -2,35 +2,56 @@
 /* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
   "compileOnSave": false,
+  "ts-node": {
+    "files": true
+  },
   "compilerOptions": {
-    "types": ["node", "jest"],
-    "outDir": "./dist/out-tsc",
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
+    "types": ["node"],
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": true,
     "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictFunctionTypes": true,
+    "noUnusedParameters": true,
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
     "importHelpers": true,
     "target": "ES2022",
+    "resolveJsonModule": true,
     "module": "ES2022",
+    "skipLibCheck": true,
+    "typeRoots": ["node_modules/@types", "src/app/testing/global.d.ts"],
+    "lib": ["es2019", "dom"],
     "paths": {
-      "components/*": ["./src/app/components/*"],
-      "consts": ["./src/app/consts/index.ts"],
-      "enums": ["./src/app/enums/index.ts"],
-      "models": ["./src/app/models/index.ts"],
-      "pages/*": ["./src/app/pages/*"],
-      "services/*": ["./src/app/services/*"]
-    }
+      "common": ["src/app/common/index.ts"],
+      "consts": ["src/app/consts/index.ts"],
+      "components/*": ["src/app/components/*"],
+      "data": ["src/app/data/index.ts"],
+      "enum": ["src/app/enum/index.ts"],
+      "interceptors": ["src/app/interceptors/index.ts"],
+      "mocks": ["src/app/mocks/index.ts"],
+      "models": ["src/app/models/index.ts"],
+      "pages/*": ["src/app/pages/*"],
+      "services/*": ["src/app/services/*"],
+      "store/*": ["src/app/store/*"],
+      "store": ["src/app/store/index.ts"],
+      "testing": ["src/app/testing/index.ts"],
+      "utils": ["src/app/utils/index.ts"]
+    },
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
+    "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
     "strictTemplates": true
   }
 }

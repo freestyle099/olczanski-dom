@@ -1,0 +1,12 @@
+.form {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(15rem, 40vw, 30rem), 1fr));
+  &__textarea,
+  &__button {
+    grid-column: 1 / -1;
+  }
+  &__button {
+    justify-self: end;
+  }
+}

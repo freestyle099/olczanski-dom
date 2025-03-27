@@ -1,0 +1,11 @@
+<button
+  pButton
+  class="button"
+  [ngClass]="{
+    button__primary: variant === 'primary',
+    button__secondary: variant === 'secondary'
+  }"
+  [routerLink]="url"
+>
+  <ng-content></ng-content>
+</button>

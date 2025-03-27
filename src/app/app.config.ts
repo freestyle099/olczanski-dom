@@ -6,6 +6,7 @@ import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { providePrimeNG } from 'primeng/config';
 
 import { routes } from './app.routes';
+import { MyPreset } from './my-preset.config';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,6 +15,13 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideHttpClient(withFetch()),
     provideAnimationsAsync(),
-    providePrimeNG()
+    providePrimeNG({
+      theme: {
+        preset: MyPreset,
+        options: {
+          darkModeSelector: false
+        }
+      }
+    })
   ]
 };
