@@ -1,0 +1,14 @@
+<nav class="nav">
+  <div class="container nav__container">
+    <div [ngClass]="isOpen ? 'nav__background nav__background--active' : 'nav__background'" (click)="toggleMenu()"></div>
+    <p-button class="nav__mobile-btn" icon="pi pi-bars" [text]="true" size="large" (click)="toggleMenu(true)"> </p-button>
+
+    <ul [ngClass]="isOpen ? 'nav__list nav__list--active' : 'nav__list'">
+      @for (navItem of navItems; track navItem.title) {
+        <li class="nav__item" (click)="toggleMenu()">
+          <a class="nav__link" [routerLink]="['/']" [fragment]="navItem.href">{{ navItem.title }}</a>
+        </li>
+      }
+    </ul>
+  </div>
+</nav>

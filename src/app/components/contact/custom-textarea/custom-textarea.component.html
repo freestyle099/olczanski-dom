@@ -1,0 +1,16 @@
+<div class="form-control">
+  <label class="form-control__label" [for]="name">
+    <span>{{ label }}</span>
+    <span *ngIf="control.hasValidator(Validators.required)">*</span>
+  </label>
+  <textarea class="form-control__input" [name]="name" [id]="name" [placeholder]="placeholder" [formControl]="control" pTextarea rows="10"></textarea>
+  @if (control?.touched && control?.hasError('required')) {
+    <p class="form-control__error">{{ validationMessages.required }}</p>
+  }
+  @if (control?.touched && control?.hasError('minlength')) {
+    <p class="form-control__error">{{ validationMessages.min(10) }}</p>
+  }
+  @if (control?.touched && control?.hasError('maxlength')) {
+    <p class="form-control__error">{{ validationMessages.max(1000) }}</p>
+  }
+</div>

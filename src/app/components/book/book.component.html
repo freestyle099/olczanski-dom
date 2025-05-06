@@ -1,0 +1,26 @@
+<section class="book">
+  <div class="book__img-wrapper">
+    <img class="book__img" [src]="ImgixService.generateSrc('13.jpg')" [srcset]="ImgixService.generateSrcSet('13.jpg')" alt="" />
+  </div>
+  <div class="book__filter"></div>
+  <div class="book__container container">
+    <div class="book__content">
+      <h2 class="book__title heading-2">Zarezerwuj już dzisiaj!</h2>
+      <div class="card flex justify-content-center gap-2">
+        <p-toast></p-toast>
+        <p-confirmDialog [dismissableMask]="true" [rejectVisible]="false" #cd>
+          <ng-template pTemplate="headless">
+            <div class="book__dialog dialog">
+              <div class="dialog__header">
+                <h3 class="dialog__title">Panel rezerwacji</h3>
+                <p-button class="dialog__close" icon="pi pi-times" [rounded]="true" [text]="true" severity="secondary" (click)="cd.close()"></p-button>
+              </div>
+              <app-room-admin></app-room-admin>
+            </div>
+          </ng-template>
+        </p-confirmDialog>
+        <p-button label="Otwórz panel rezerwacji" severity="primary" (click)="openDialog()"></p-button>
+      </div>
+    </div>
+  </div>
+</section>

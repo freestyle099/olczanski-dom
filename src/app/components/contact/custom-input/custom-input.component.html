@@ -1,0 +1,25 @@
+<div class="form-control">
+  <label class="form-control__label" [for]="name">
+    <span>{{ label }}</span>
+    @if (control.hasValidator(Validators.required)) {
+      <span>*</span>
+    }
+  </label>
+  <input class="form-control__input" [name]="name" [id]="name" [placeholder]="placeholder" [type]="type" [formControl]="control" pInputText />
+
+  @if (control?.touched && control?.hasError('required')) {
+    <p class="form-control__error">{{ validationMessages.required }}</p>
+  }
+  @if (control?.touched && control?.hasError('minlength')) {
+    <p class="form-control__error">{{ validationMessages.min(min) }}</p>
+  }
+  @if (control?.touched && control?.hasError('maxlength')) {
+    <p class="form-control__error">{{ validationMessages.max(max) }}</p>
+  }
+  @if (control?.touched && control?.hasError('email')) {
+    <p class="form-control__error">{{ validationMessages.email }}</p>
+  }
+  @if (control?.touched && control?.hasError('pattern')) {
+    <p class="form-control__error">{{ validationMessages.number }}</p>
+  }
+</div>

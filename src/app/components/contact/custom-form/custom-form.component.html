@@ -1,0 +1,24 @@
+<p-toast></p-toast>
+<form class="form" (ngSubmit)="sendEmail()" [formGroup]="form">
+  <app-custom-input placeholder="Wpisz swoje imię" name="firstName" [control]="formControl('firstName')" label="Imię"></app-custom-input>
+  <app-custom-input placeholder="Wpisz swoje nazwisko" name="lastName" [control]="formControl('lastName')" label="Nazwisko"></app-custom-input>
+  <app-custom-input placeholder="Wpisz swój adres email" type="email" name="email" [control]="formControl('email')" label="Adres email"></app-custom-input>
+  <app-custom-input
+    placeholder="Wpisz swój numer telefonu"
+    name="phoneNumber"
+    [control]="formControl('phoneNumber')"
+    label="Numer telefonu"
+    [min]="9"
+    [max]="15"
+  ></app-custom-input>
+  <app-custom-textarea
+    class="form__textarea"
+    placeholder="Wpisz treść wiadomości"
+    name="message"
+    label="Treść wiadomości"
+    [control]="formControl('message')"
+  ></app-custom-textarea>
+  <div class="form__button">
+    <app-button>Wyślij</app-button>
+  </div>
+</form>

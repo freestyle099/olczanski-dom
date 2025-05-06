@@ -1,0 +1,29 @@
+@use 'variables' as *;
+
+.about {
+  padding: 3.125rem 0;
+  //background-color: var(--background-color);
+  &__title {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    grid-template-rows: max-content 1fr;
+    gap: 1rem;
+    @media screen and (max-width: $sm) {
+      grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    }
+  }
+  &__item {
+    display: grid;
+    justify-content: center;
+    align-content: start;
+    justify-items: center;
+    text-align: center;
+  }
+  &__icon {
+    width: 5rem;
+  }
+}

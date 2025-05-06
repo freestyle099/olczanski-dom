@@ -1,0 +1,42 @@
+@use 'variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@700&display=swap');
+
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4 {
+  color: var(--black-color);
+  font-family: var(--header-font);
+  text-rendering: optimizeLegibility;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.heading-1 {
+  font-size: 2.5rem;
+  @media only screen and (max-width: $sm) {
+    font-size: 2rem;
+  }
+}
+.heading-2 {
+  font-size: 2rem;
+  @media only screen and (max-width: $sm) {
+    font-size: 1.4rem;
+  }
+}
+.heading-3 {
+  font-size: 1.5rem;
+  @media only screen and (max-width: $sm) {
+    font-size: 1.2rem;
+  }
+}
+.heading-4 {
+  font-size: 1.25rem;
+  @media only screen and (max-width: $sm) {
+    font-size: 1rem;
+  }
+}
+
+strong {
+  font-weight: 600;
+}

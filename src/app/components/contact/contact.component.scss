@@ -1,0 +1,9 @@
+.contact {
+  position: relative;
+  background-color: var(--background-color);
+  padding: 3rem 0;
+  &__title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}

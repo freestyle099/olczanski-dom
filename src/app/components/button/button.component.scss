@@ -1,0 +1,30 @@
+.button {
+  min-height: 2.625rem;
+  min-width: 13.5rem;
+  transition: var(--transition);
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--body-font), sans-serif;
+  justify-content: center;
+  &:focus {
+    box-shadow: var(--box-shadow);
+  }
+  &__primary {
+    color: var(--white-color);
+    background: var(--p-primary-color);
+    border: 2px solid var(--p-primary-color);
+    &:hover {
+      background: var(--white-color);
+      color: var(--p-primary-color);
+    }
+  }
+  &__secondary {
+    color: var(--p-primary-color);
+    background: var(--p-surface-color);
+    border: 2px solid var(--white-color);
+    &:hover {
+      color: var(--white-color);
+      background: var(--p-primary-color);
+    }
+  }
+}

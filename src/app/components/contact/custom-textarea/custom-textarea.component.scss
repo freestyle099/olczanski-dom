@@ -1,0 +1,21 @@
+.form-control {
+  display: grid;
+  gap: 0.5rem;
+  &__label {
+    font-size: 1rem;
+  }
+  &__input {
+    width: 100%;
+    &:hover {
+      border-color: var(--primary);
+    }
+    &:focus {
+      box-shadow: var(--box-shadow);
+      border-color: var(--primary);
+    }
+  }
+  &__error {
+    color: var(--red-500);
+    margin-bottom: 0;
+  }
+}

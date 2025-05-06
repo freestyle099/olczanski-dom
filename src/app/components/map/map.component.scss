@@ -1,0 +1,20 @@
+@use 'variables' as *;
+
+.map {
+  &__title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  &__map {
+    width: 100%;
+    border: none;
+    height: 100%;
+    min-height: 500px;
+    @media screen and (max-width: $md) {
+      height: 50vw;
+    }
+    @media screen and (max-width: $sm) {
+      height: 80vw;
+    }
+  }
+}
